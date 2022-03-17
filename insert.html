@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>우리 산책할까요</title>
+        <style>
+            *{
+                margin: 0px;
+                padding: 0px;
+                text-decoration: none;
+            }
+
+            body {
+                background-color: #eeeeee;
+            }
+            
+            a {
+                color: blue;
+            }
+
+            a:visited {
+                color : blue;
+            }
+    
+            .signupForm {
+                position:absolute;
+                width:300px;
+                height:600px;
+                padding: 30px, 20px;
+                background-color:#FFFFFF;
+                text-align:center;
+                top:50%;
+                left:50%;
+                transform: translate(-50%,-50%);
+                border-radius: 15px;
+                box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+            }
+            
+            .signupForm h2{
+                text-align: center;
+                margin: 30px;
+            }
+            
+            .Form{
+                border-bottom: 2px solid #adadad;
+                margin: 30px;
+                padding: 10px 10px;
+            }
+
+            .Form2{
+                margin: 30px;
+                padding: 10px 10px;
+            }
+
+            .content {
+                width: 100%;
+                border:none;
+                outline:none;
+                color: #636e72;
+                font-size:16px;
+                height:25px;
+                background: none;
+            }
+                   
+            .signupbtn {
+                position:relative;
+                left:40%;
+                transform: translateX(-50%);
+                margin-bottom: 40px;
+                width:80%;
+                height:40px;
+                background: linear-gradient(125deg,#81ecec,#6c5ce7,#81ecec);
+                background-position: left;
+                background-size: 200%;
+                color:white;
+                font-weight: bold;
+                border:none;
+                cursor:pointer;
+                transition: 0.4s;
+                display:inline;
+            }
+            
+            .signupbtn:hover {
+                background-position: right;
+            }
+            
+            .bottomText {
+                text-align: center;
+            }
+
+        </style>
+        <script>
+            window.onload = function() {
+                var today = new Date();
+                var year = today.getFullYear();
+                var month = ('0' + (today.getMonth() + 1)).slice(-2);
+                var day = ('0' + today.getDate()).slice(-2);
+                var hours = ('0' + today.getHours()).slice(-2); 
+                var minutes = ('0' + today.getMinutes()).slice(-2);
+                var dateString = year + '-' + month  + '-' + day + ' ' + hours + ':' + minutes;                        
+                document.getElementById("date").value = dateString;
+            }
+        </script>
+    </head>
+    <body width="100%" height="100%">
+        <form method="post" class="signupForm" enctype="multipart/form-data">
+            <h2>등록하기</h2>
+            <div class="Form">
+                <input type="text" name="title"class="content" placeholder="제목">
+            </div>
+            <div class="Form">
+                <input type="text" name="date" class="content" id="date">
+            </div>
+            <div class="Form2">
+                <input type="file" name="image" class="content">
+            </div>
+            <input type="submit" name="" class="signupbtn" value="글 작성" />
+            <div class="bottom Text">
+                채팅하러 가기 <a href="/chatting">Go</a>
+            </div>
+        </form>
+        <!--회원가입 폼-->
+    </body>
+</html>
